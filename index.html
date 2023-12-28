@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+  <div id="cal">
+    <div id="cul">
+        <input type="text" placeholder="0" id="ip">
+          <button onclick="clr()" class="btn clr">clr</button>
+
+          <button onclick="dele()" class="btn del">DEL</button>
+          <button onclick="display('%')" class="btn pres">%</button>
+          <button onclick="display('/')" class="btn div">/</button> 
+          <button onclick="display('7')" class="btn seven">7</button>
+          <button onclick="display('8')" class="btn eight">8</button>
+          <button onclick="display('9')" class="btn nine">9</button>
+          <button onclick="display('*')" class="btn mul">x</button>
+          <button onclick="display('4')" class="btn four">4</button>
+          <button onclick="display('5')" class="btn five">5</button>
+          <button onclick="display('6')" class="btn six">6</button>
+          <button onclick="display('-')" class="btn min">-</button>
+          <button onclick="display('1')" class="btn one">1</button>
+          <button onclick="display('2')" class="btn two">2</button>
+          <button onclick="display('3')" class="btn three">3</button>
+          <button onclick="display('+')" class="btn plus">+</button>
+          <button onclick="display('.')" class="btn dott">.</button>
+
+          <button onclick="display('0')" class="btn zero">0</button>
+          <button onclick="calculate()" class="btn equal">=</button>
+      
+    </div>
+    
+  </div>  
+  <script >
+    let input=document.getElementById("ip");
+    function display(num){
+       input.value += num ;
+    }
+    function calculate(){
+      try{
+        input.value=eval(input.value);
+      }
+      catch{
+        alert("Invalid")
+      }
+    }
+    function clr(){
+      input.value ="";
+    }
+    function dele(){
+      input.value=input.value.slice(0,-1)
+    }
+  </script>
+</body>
+</html>
